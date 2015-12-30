@@ -2,6 +2,7 @@ Jornata
 ===================
 
 An [**Ionic**](https://ionicframework.com) App for a Hackathon which I participated in.
+You can view the demo using Ionic View: #0ac5d38a
 
 ----------
 
