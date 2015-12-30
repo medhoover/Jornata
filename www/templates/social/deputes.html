@@ -1,0 +1,46 @@
+<!-- Title for the ion view -->
+<ion-view title="Deputés">
+  <!-- ======================
+  LEFT SIDE BUTTON
+  ====================== -->
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <!-- ======================
+  /END LEFT SIDE BUTTON
+  ====================== -->
+
+  <!-- ======================
+  MAIN CONTENT SECTION
+  ====================== -->
+  <ion-content class="has-header gem-ion-content feed">
+
+    <!-- ======================
+    SEARCH FORM - STANDARD IONIC MARKUP
+    ====================== -->
+    <div class="item item-input-inset">
+      <label class="item-input-wrapper">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" placeholder="Chercher" ng-model="searchText" ng-click="scrollTop()">
+      </label>
+    </div>
+    <!-- ======================
+    /END SEARCH FORM
+    ====================== -->
+    <div class="news-item" collection-repeat="depute in deputes | filter:searchText" >
+      <a href="#/app/depute/{{depute.id}}" style="text-decoration:none">
+      <div class="news-thumb">
+        <img src="{{depute.picture}}" alt="" class="img">
+      </div>
+      <div class="news-content">
+        <h4>{{depute.depute}}</h4>
+      </div>
+      </a>
+    </div>
+
+  </ion-list>
+  </ion-content>
+  <!-- ======================
+  END MAIN CONTENT SECTION
+  ====================== -->
+</ion-view>

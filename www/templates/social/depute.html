@@ -1,0 +1,73 @@
+<!-- Title for header bar (refer to www/index.html) -->
+<ion-view title="Ali Sahbi">
+  <!-- ======================
+  LEFT SIDE BUTTON
+  ====================== -->
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    <a href="#/app/deputes"><button class="button button-icon icon ion-ios-arrow-back"> </button></a>
+  </ion-nav-buttons>
+
+
+
+  <!-- ======================
+  RIGHT SIDE BUTTON
+  ====================== -->
+
+  <!-- ======================
+  MAIN CONTENT SECTION
+  ====================== -->
+  <ion-content class="has-header gem-ion-content">
+    <!-- ======================
+    GEMIONIC PROFILE SECTION
+    ====================== -->
+
+
+    <div ng-repeat="depute in deputes | filter:{'id': did}">
+    <div class="gem-profile-media">
+      <div class="gem-profile-details">
+        <img src="{{depute.picture}}" alt="" class="gem-circle profile-image">
+        <h3 class="gem-white">{{depute.depute}}</h3>
+        <h5 class="gem-white">Al Amal</h5>
+
+
+        <!-- ionic row - .profile-stats helps with transparency and white borders -->
+        <div class="row profile-stats">
+          <div class="col stat">
+            <h6 class="gem-white uppercase">Ce mois</h6>
+            <h6 class="gem-white">{{depute.absence.month}} Absences</h6>
+          </div>
+          <div class="col stat">
+            <h6 class="gem-white uppercase">Cette Année</h6>
+            <h6 class="gem-white">{{depute.absence.year}} Absences</h6>
+          </div>
+          <div class="col stat">
+            <h6 class="gem-white uppercase">Total</h6>
+            <h6 class="gem-white">{{depute.absence.total}} Absences</h6>
+          </div>
+        </div>
+        <!-- End Ionic row -->
+      </div>
+
+      <!-- background image -->
+      <img src="img/gemionic/post-img.png" alt="" class="fluid-image profile-background-image">
+    </div>
+    <!-- ======================
+    END GEMIONIC PROFILE SECTION
+    ====================== -->
+    <div class="list">
+       <h6 class="item item-icon-left" href="#">
+         Payé : <span class="assertive"> {{depute.payed.recieved}} DT</span> | Merite : <span class="balanced"> {{depute.payed.earned}} DT</span>
+       </h6>
+     </div>
+    <div class="text-center padding">
+      <a class="button button-assertive" href="#/app/newdenonce">Dénoncer</a>
+    </div>
+
+
+    </div>
+
+    <!-- Standard Ionic List Markup -->
+
+  </ion-content>
+</ion-view>

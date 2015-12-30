@@ -1,0 +1,81 @@
+<!-- Title for the ion view -->
+<ion-view title="Dénonces">
+  <!-- ======================
+  LEFT SIDE BUTTON
+  ====================== -->
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <!-- ======================
+  /END LEFT SIDE BUTTON
+  ====================== -->
+
+  <!-- ======================
+  MAIN CONTENT SECTION
+  ====================== -->
+  <ion-content class="has-header gem-ion-content feed">
+
+    <!-- ======================
+    SEARCH FORM - STANDARD IONIC MARKUP
+    ====================== -->
+    <div class="item item-input-inset">
+      <label class="item-input-wrapper">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" placeholder="Chercher" ng-model="searchText" ng-click="scrollTop()">
+      </label>
+    </div>
+    <!-- ======================
+    /END SEARCH FORM
+    ====================== -->
+    <ion-list>
+
+    <div collection-repeat="denonce in denonces | filter:searchText">
+    <!-- ======================
+    POST - image only
+    ====================== -->
+    <div class="news-media">
+      <img src="{{denonce.picture}}" alt="" class="fluid-image">
+      <div class="media-social-stats" ng-if="denonce.isApproved">
+        <button class="button button-small button-borderless button-positive"><i class="icon ion-checkmark"></i></button>
+
+      </div>
+    </div>
+
+    <!-- ======================
+    POSTER - profile thumb, name and post stats
+    ====================== -->
+    <div class="news-item">
+      <div class="news-thumb">
+        <img src="{{denonce.userImage}}" alt="" class="img">
+      </div>
+      <div class="news-content">
+        <h4>{{denonce.userName}}</h4>
+        <div class="gem-tiny-text news-item-stats">
+          <i class="icon ion-clock"></i> {{denonce.date}}
+          <a href="{{denonces.facebookUrl}}">
+          <span class="news-comment-summary">
+            <i class="icon ion-social-facebook"></i> Publication
+          </span>
+          </a>
+
+        </div>
+
+      </div>
+      <div class="comment-item">
+        <h4><i class="icon ion-person"></i> {{denonce.depute}}</h4>
+        {{denonce.Message}}
+      </div>
+    </div>
+    <!-- ======================
+    /END POSTER
+    ====================== -->
+
+
+    </div>
+
+  </ion-list>
+  </ion-content>
+  <!-- ======================
+  END MAIN CONTENT SECTION
+  ====================== -->
+</ion-view>

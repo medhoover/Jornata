@@ -1,0 +1,70 @@
+<!-- Title for the ion view -->
+<ion-view title="Nouvelle Denonce">
+  <!-- ======================
+  LEFT SIDE BUTTON
+  ====================== -->
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <!-- ======================
+  END LEFT SIDE BUTTON
+  ====================== -->
+
+  <!-- ======================
+  RIGHT SIDE BUTTON
+  ====================== -->
+  <ion-nav-buttons side="right">
+    <button class="button button-block  button-positive button-action" ng-click="send()">
+      Envoyer
+    </button>
+  </ion-nav-buttons>
+  <!-- ======================
+  EMD RIGHT SIDE BUTTON
+  ====================== -->
+
+  <!-- ======================
+  MAIN CONTENT SECTION
+  ====================== -->
+  <ion-content class="has-header gem-ion-content">
+    <!-- ======================
+    GEMIONIC EDIT SECTION
+    ====================== -->
+    <div class="gem-edit-section">
+      <div class="gem-poster">
+        <div class="padding">
+          <h4>
+            <img src="img/gemionic/profile-image.jpg" alt="" class="gem-circle profile-image"> <b>Sihem Ebdelli</b>
+          </h4>
+          <div class="padding">
+          <!-- Textarea for editing text -->
+          <textarea placeholder="Votre message"></textarea>
+
+          <button class="button button-block button-stable" ng-click="addImage()">
+            <i class="icon ion-camera"></i>
+            Add image</button>
+
+        </div>
+
+
+        </div>
+      </div>
+      <div class="item item-input-inset">
+        <label class="item-input-wrapper">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input type="text" placeholder="C'est qui?"  ng-model="searchText" ng-click="scrollTop()">
+        </label>
+      </div>
+
+    </div>
+    <div collection-repeat="depute in deputes | filter:searchText">
+      <ion-radio ng-model="choice" ng-value="{{depute.id}}">{{depute.depute}}</ion-radio>
+
+    </div>
+    <!-- ======================
+    END GEMIONIC EDIT SECTION
+    ====================== -->
+  </ion-content>
+  <!-- ======================
+  END MAIN CONTENT SECTION
+  ====================== -->
+</ion-view>

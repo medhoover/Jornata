@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "question": "Que pensez-vous de la nouvelle loi N° 64?",
+    "description": "Ce loi autorise quelque chose"
+  },
+  {
+    "id": 2,
+    "question": "Evaluer l'efficacité des députés ce mois ?",
+    "description": "Veillez entre un numero de 1 à 5"
+  }
+  ]

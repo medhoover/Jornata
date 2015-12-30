@@ -1,0 +1,43 @@
+<ion-side-menus>
+
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-light nav-title-slide-ios7">
+      <ion-nav-back-button class="button-clear"><i class="icon ion-ios7-arrow-back"></i></ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
+  </ion-side-menu-content>
+  <ion-side-menu side="left">
+
+    <!-- Sidebar Content -->
+    <ion-content class="gem-sidebar dark">
+      <!-- Profile Box - Extends ionic's .row -->
+      <div class="row gem-sidebar-profile-box">
+        <!-- Profile Thumb -->
+        <div class="col col-25">
+          <img src="img/gemionic/profile-image.jpg" class="gem-profile-image" alt="">
+        </div>
+        <!-- End Profile Thumb -->
+
+        <!-- Profile Name -->
+        <div class="col col-50">
+          <h5 class="title">Sihem Ebdelli</h5>
+        </div>
+        <!-- End Profile Name -->
+
+        <!-- Account Settings Icon -->
+        <!-- End Account Settings Icon -->
+
+      </div>
+      <!-- End Profile Box -->
+      <ion-list>
+
+        <ion-item nav-clear menu-close href="#/app/denonces">Dénonces</ion-item>
+        <ion-item nav-clear menu-close href="#/app/newdenonce">Nouvelle Denonce</ion-item>
+        <ion-item nav-clear menu-close href="#/app/deputes">Deputés</ion-item>
+        <ion-item nav-clear menu-close href="#/app/question">Questions</ion-item>
+        <ion-item class="item-ng-click" nav-clear menu-close ng-click="login()">Login</ion-item>
+      </ion-list>
+    </ion-content>
+    <!-- End sidemenu content -->
+  </ion-side-menu>
+</ion-side-menus>
