@@ -32,7 +32,7 @@ Installation
 API
 -------------------
 
-I created a repository for an Node API serving this app:
+I created a repository for a Node API serving this app:
 Check: [JorataApi](https://github.com/medhoover/JornataApi) 
 
 You can continue my work by reconfiguring the RESTful calls located in [services.js](https://github.com/medhoover/Jornata/blob/master/www/js/services.js)
